@@ -1,0 +1,12 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "cxidemo",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

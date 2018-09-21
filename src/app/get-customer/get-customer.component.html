@@ -1,0 +1,55 @@
+<!-- <p>
+  get-customer works!
+</p> -->
+<div class="content-area">
+    <!-- <div class="clr-row clr-align-items-center">
+        <div class="clr-col">
+            <ol class="list">
+                <li>...</li>
+                <li>
+                    Ullamco laboris nisi ut aliquip
+                    <ul class="list">
+                        <li>Consequat</li>
+                        <li>Adipisicing</li>
+                        <li>Exercitation</li>
+                    </ul>
+                </li>
+                <li>Reprehenderit in voluptate</li>
+                <li>
+                    Mollit anim id
+                    <ol class="list">
+                        <li>Consequat</li>
+                        <li>Adipisicing</li>
+                        <li>Exercitation</li>
+                    </ol>
+                </li>
+                <li>Reprehenderit in voluptate</li>
+            </ol>
+        </div>
+    </div> -->
+    <!-- <ul class="list" *ngIf="customers$ | async as customers else noData">
+      <li *ngFor="let k of customers">
+          {{k.UserID + " " + k.LastName + " " + k.FirstName + " " + k.City}}
+      </li>
+  </ul>
+  <ng-template #noData>No Data Available</ng-template> -->
+
+  <!-- hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+  <clr-datagrid>
+    <clr-dg-column>User ID</clr-dg-column>
+    <clr-dg-column>Last Name</clr-dg-column>
+    <clr-dg-column>First Name</clr-dg-column>
+    <clr-dg-column>City</clr-dg-column>
+
+    <clr-dg-row *ngFor="let user of custo">
+        <clr-dg-cell>{{user?.UserID}}</clr-dg-cell>
+        <clr-dg-cell>{{user?.LastName}}</clr-dg-cell>
+        <clr-dg-cell>{{user?.FirstName}}</clr-dg-cell>
+        <clr-dg-cell>{{user?.City}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>{{custo?.length}} users/clients/customers</clr-dg-footer>
+ </clr-datagrid>
+   <!-- hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+
+</div>

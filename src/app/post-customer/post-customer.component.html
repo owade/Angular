@@ -1,0 +1,65 @@
+<!-- <p>
+  post-customer works!
+</p> -->
+
+<div class="content-area">
+  <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" >
+    <section class="form-block">
+        <label>Add Customer Information</label>
+        <div class="form-group">
+            <label for="empFirstName">First name</label>
+            <label for="empFirstName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched)">
+                <input type="text" id="empFirstName" placeholder="Enter first name"
+                    required
+                    name="FirstName"
+                    [(ngModel)]="model.FirstName"
+                    #firstNameInput="ngModel">
+                <span class="tooltip-content">
+                    First Name is Required.
+                </span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="empLastName">Last name</label>
+            <label for="empLastName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)">
+                <input type="text" id="empLastName" placeholder="Enter last name"
+                    required
+                    name="LastName"
+                    [(ngModel)]="model.LastName"
+                    #lastNameInput="ngModel">
+                <span class="tooltip-content">
+                    Last Name is Required.
+                </span>
+            </label>
+        </div>
+        <div class="form-group">
+          <label for="empLastName">City</label>
+          <label for="empLastName"
+              aria-haspopup="true"
+              role="tooltip"
+              class="tooltip tooltip-validation tooltip-md"
+              [class.invalid]="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)">
+              <input type="text" id="empLastName" placeholder="Enter City name"
+                  required
+                  name="City"
+                  [(ngModel)]="model.City"
+                  #lastNameInput="ngModel">
+              <span class="tooltip-content">
+                  City is Required.
+              </span>
+          </label>
+      </div>
+        <button class="btn btn-primary" type="submit"
+            [disabled]="employeeForm.form.invalid">Add</button>
+    </section>
+</form>
+<a href="#" class="nav-link nav-text" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" >Log In</a>
+</div>
