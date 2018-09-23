@@ -1,3 +1,28 @@
-<p>
-  home works!
-</p>
+<!-- <div class="content-area"> -->
+      <div class="alert alert-danger" *ngIf="!auth.isAuthenticated()">
+          <div class="alert-items">
+              <div class="alert-item static">
+                  <div class="alert-icon-wrapper">
+                      <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span class="alert-text">
+                      Please Login To Continue
+                  </span>
+              </div>
+          </div>
+      </div>
+
+      <div class="alert alert-success" *ngIf="auth.isAuthenticated()">
+        <div class="alert-items">
+            <div class="alert-item static">
+                <div class="alert-icon-wrapper">
+                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                </div>
+                <span class="alert-text">
+                    Conragulations you are logged in
+                </span>
+            </div>
+        </div>
+    </div>
+
+  <!-- </div> -->

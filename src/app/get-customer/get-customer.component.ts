@@ -22,6 +22,9 @@ import { CUSTOM_BUTTON_TYPES } from '@clr/angular';
 export class GetCustomerComponent implements OnInit {
   customers$: Observable<Customer[]>;
   custo: Customer[];
+  currentPage = 1;
+  total = 0;
+  loading = true;
   constructor(private http: HttpClient, public auth: AuthService, public CustService: CustomerGetService) { }
 
 
@@ -45,7 +48,9 @@ export class GetCustomerComponent implements OnInit {
             // .get<Customer[]>('https://o5nmudet3b.execute-api.us-east-2.amazonaws.com/dev/clients', {headers : headerss})
             // .map(data => _.values(data))
             // .do(console.log);
+
              this.getCustomers();
+             // this.loading = false;
              console.log('ewgew');
              // console.log(this.custo.length);
   }
@@ -55,6 +60,8 @@ export class GetCustomerComponent implements OnInit {
     this.CustService.getCustomers()
     .subscribe(custs => {
       this.custo = (custs) ;
+      this.loading = false;
+      this.total = this.custo.length;
     });
 
   }

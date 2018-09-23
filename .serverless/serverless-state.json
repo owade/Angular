@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "cxidemo",
+    "service": "CxiInt",
     "serviceObject": {
-      "name": "cxidemo"
+      "name": "CxiInt"
     },
     "provider": {
       "stage": "production",
@@ -24,7 +24,7 @@
           "ApiLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/cxidemo-production-api"
+              "LogGroupName": "/aws/lambda/CxiInt-production-api"
             }
           },
           "IamRoleLambdaExecution": {
@@ -53,7 +53,7 @@
                       "-",
                       [
                         "production",
-                        "cxidemo",
+                        "CxiInt",
                         "lambda"
                       ]
                     ]
@@ -68,7 +68,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/cxidemo-production-api:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/CxiInt-production-api:*"
                           }
                         ]
                       },
@@ -79,7 +79,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/cxidemo-production-api:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/CxiInt-production-api:*:*"
                           }
                         ]
                       }
@@ -92,7 +92,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "cxidemo",
+                    "CxiInt",
                     "production",
                     "eu-central-1",
                     "lambdaRole"
@@ -108,9 +108,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/cxidemo/production/1537516250093-2018-09-21T07:50:50.093Z/cxidemo.zip"
+                "S3Key": "serverless/CxiInt/production/1537683630597-2018-09-23T06:20:30.597Z/CxiInt.zip"
               },
-              "FunctionName": "cxidemo-production-api",
+              "FunctionName": "CxiInt-production-api",
               "Handler": "lambda.universal",
               "MemorySize": 192,
               "Role": {
@@ -127,20 +127,20 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ApiLambdaVersion9gIBk8kSTgNqyOnU0iHmXDFC9QV9o6DGSXTatpJCCs": {
+          "ApiLambdaVersionzvf4z1cwALssiMhRoKLuTrJrhuaodJPSmCsWozTaDUY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "OzrToy3M4rhLJYU/qLHbLNXPl17bxIU92Gsaa0i0HMs="
+              "CodeSha256": "xqezaI3BakgtX1tu1WU+l4pqDexfz+EyFh1OleBcGT4="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "production-cxidemo",
+              "Name": "production-CxiInt",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -244,7 +244,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1537516250121": {
+          "ApiGatewayDeployment1537683632283": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -300,7 +300,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersion9gIBk8kSTgNqyOnU0iHmXDFC9QV9o6DGSXTatpJCCs"
+              "Ref": "ApiLambdaVersionzvf4z1cwALssiMhRoKLuTrJrhuaodJPSmCsWozTaDUY"
             }
           },
           "ServiceEndpoint": {
@@ -359,15 +359,15 @@
             "http": "ANY /"
           }
         ],
-        "name": "cxidemo-production-api",
+        "name": "CxiInt-production-api",
         "package": {},
         "vpc": {}
       }
     },
-    "artifact": "C:\\CXI\\cxidemo\\.serverless\\cxidemo.zip"
+    "artifact": "C:\\CXI\\cxidemo\\.serverless\\CxiInt.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/cxidemo/production/1537516250093-2018-09-21T07:50:50.093Z",
-    "artifact": "cxidemo.zip"
+    "artifactDirectoryName": "serverless/CxiInt/production/1537683630597-2018-09-23T06:20:30.597Z",
+    "artifact": "CxiInt.zip"
   }
 }

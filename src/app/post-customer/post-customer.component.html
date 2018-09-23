@@ -2,7 +2,7 @@
   post-customer works!
 </p> -->
 
-<div class="content-area">
+<!-- <div class="content-area"> -->
   <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" >
     <section class="form-block">
         <label>Add Customer Information</label>
@@ -62,4 +62,4 @@
     </section>
 </form>
 <a href="#" class="nav-link nav-text" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" >Log In</a>
-</div>
+<!-- </div> -->
